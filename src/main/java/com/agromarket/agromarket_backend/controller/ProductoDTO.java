@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "producto")
-public class Producto {
+public class ProductoDTO {
 
     @Id
     private String id;
@@ -12,9 +12,9 @@ public class Producto {
     private String nombre;
     private double precio;
 
-    public Producto() {}
+    public ProductoDTO() {}
 
-    public Producto(String nombre, double precio) {
+    public ProductoDTO(String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
