@@ -18,14 +18,14 @@ public class InicioController {
         this.repository = repository;
     }
 
-    // 🔎 Buscar por nombre (ej: "inicio")
+
     @GetMapping("/{nombre}")
     public Inicio obtenerPorNombre(@PathVariable String nombre) {
         return repository.findByNombre(nombre)
                 .orElseThrow(() -> new RuntimeException("Inicio no encontrado"));
     }
 
-    // 💾 Guardar
+
     @PostMapping
     public Inicio guardar(@RequestBody Inicio inicio) {
         return repository.save(inicio);
