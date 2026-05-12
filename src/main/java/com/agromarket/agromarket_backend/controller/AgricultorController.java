@@ -1,39 +1,45 @@
 package com.agromarket.agromarket_backend.controller;
 
 import com.agromarket.agromarket_backend.model.AgricultorDTO;
-import com.agromarket.agromarket_backend.repository.AgricultorRepository;
+import com.agromarket.agromarket_backend.service.AgricultorService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/agricultor")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AgricultorController {
 
-    private final AgricultorRepository repo;
+    @Autowired
+    private AgricultorService agricultorService;
 
-    public AgricultorController(AgricultorRepository repo) {
-        this.repo = repo;
-    }
 
     @PostMapping
     public AgricultorDTO guardar(@RequestBody AgricultorDTO agricultor) {
-        return repo.save(agricultor);
+        return agricultorService.guardar(agricultor);
     }
+
 
     @GetMapping
     public List<AgricultorDTO> listar() {
-        return repo.findAll();
+        return agricultorService.listar();
     }
+
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable String id) {
-        repo.deleteById(id);
+        agricultorService.eliminar(id);
     }
 
+
     @PutMapping("/{id}")
-    public AgricultorDTO actualizar(@PathVariable String id, @RequestBody AgricultorDTO agricultor) {
-        agricultor.setId(id);
-        return repo.save(agricultor);
+    public AgricultorDTO actualizar(
+            @PathVariable String id,
+            @RequestBody AgricultorDTO agricultor) {
+
+        return agricultorService.actualizar(id, agricultor);
     }
 }
