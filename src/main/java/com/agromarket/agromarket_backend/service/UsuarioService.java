@@ -62,7 +62,7 @@ public class UsuarioService {
         UsuarioDTO user = encontrado.get();
 
         if (encoder.matches(usuario.getPassword(), user.getPassword())) {
-            return "Login correcto";
+            return user.getRol();
         } else {
             return "Credenciales incorrectas";
         }
