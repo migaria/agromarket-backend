@@ -10,31 +10,72 @@ public class AgricultorDTO {
     private String id;
 
     private String nombre;
-    private String finca;
-    private String ubicacion;
-    private String telefono;
+    private int cantidad;
+    private double precio;
+    private String tipo;
+    private String imagen;
 
     public AgricultorDTO() {}
 
-    public AgricultorDTO(String nombre, String finca, String ubicacion, String telefono) {
+    public AgricultorDTO(String nombre, int cantidad,
+                         double precio, String tipo, String imagen) {
+
         this.nombre = nombre;
-        this.finca = finca;
-        this.ubicacion = ubicacion;
-        this.telefono = telefono;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.tipo = tipo;
+        this.imagen = imagen;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    // GETTERS
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getId() {
+        return id;
+    }
 
-    public String getFinca() { return finca; }
-    public void setFinca(String finca) { this.finca = finca; }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public String getUbicacion() { return ubicacion; }
-    public void setUbicacion(String ubicacion) { this.ubicacion = ubicacion; }
+    public int getCantidad() {
+        return cantidad;
+    }
 
-    public String getTelefono() { return telefono; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public double getPrecio() {
+        return precio;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    // SETTERS
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 }
