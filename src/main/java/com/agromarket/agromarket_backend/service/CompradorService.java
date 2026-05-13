@@ -16,21 +16,31 @@ public class CompradorService {
 
 
     public CompradorDTO guardar(CompradorDTO comprador) {
+
         return compradorRepository.save(comprador);
     }
 
 
     public List<CompradorDTO> listar() {
+
         return compradorRepository.findAll();
     }
 
 
+    public CompradorDTO obtenerPorId(String id) {
+
+        return compradorRepository.findById(id).orElse(null);
+    }
+
+
     public void eliminar(String id) {
+
         compradorRepository.deleteById(id);
     }
 
 
-    public CompradorDTO actualizar(String id, CompradorDTO comprador) {
+    public CompradorDTO actualizar(String id,
+                                   CompradorDTO comprador) {
 
         comprador.setId(id);
 
