@@ -13,16 +13,23 @@ public class Producto {
     private String categoria;
     private double precio;
     private int stock;
+    private String imagen;
 
     public Producto() {}
 
-    public Producto(String nombre, String categoria, double precio, int stock) {
+    public Producto(String nombre, String categoria, double precio, int stock ,String imagen) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
         this.stock = stock;
     }
+    public String getImagen() {
+        return imagen;
+    }
 
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
